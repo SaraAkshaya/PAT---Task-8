@@ -1,0 +1,42 @@
+class Circle:
+    # Private class variable
+    __pi = 3.141
+
+    def __init__(self, data):
+        if len(data) >= 3:
+            self.__radius = data[0]
+            self.__x = data[1]
+            self.__y = data[2]
+
+    def calculate_area(self):
+        return Circle.__pi * self.__radius ** 2
+
+    def calculate_circumference(self):
+        return 2 * Circle.__pi * self.__radius
+
+    @classmethod
+    def Area(cls, radius):
+        return cls.__pi * radius ** 2
+
+    @classmethod
+    def Perimeter(cls, radius):
+        return 2 * cls.__pi * radius
+
+    def display_info(self):
+        print(f"Circle Information:")
+        print(f"Radius: {self.__radius}")
+        print(f"Center: ({self.__x}, {self.__y}")
+        print(f"Area: {self.calculate_area()}")
+        print(f"Circumference: {self.calculate_circumference()}")
+
+# Example usage:
+data_list = [10, 501, 22, 37, 100, 999, 87, 351]
+circle1 = Circle(data_list[:3])  # Create a circle using the first three values
+circle1.display_info()
+
+# Calculate area and circumference using class methods
+radius = 10  # Replace with the desired radius
+area = Circle.Area(radius)
+perimeter = Circle.Perimeter(radius)
+print(f"Area: {area}")
+print(f"Circumference: {perimeter}")
