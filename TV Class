@@ -1,0 +1,51 @@
+class TV:
+    def __init__(self, brand):
+        self.brand = brand
+        self.channel = 1
+        self.price = 0  # Set the default price to 0, update as needed
+        self.inches = 0  # Set the default inches to 0, update as needed
+        self.on = False
+        self.volume = 50  # Default volume
+
+    def increase_volume(self):
+        if self.volume < 100:
+            self.volume += 1
+
+    def decrease_volume(self):
+        if self.volume > 0:
+            self.volume -= 1
+
+    def set_channel(self, channel):
+        if 1 <= channel <= 50:
+            self.channel = channel
+
+    def reset(self):
+        self.channel = 1
+        self.volume = 50
+
+    def status(self):
+        return f"{self.brand} at channel {self.channel}, volume {self.volume}"
+
+
+class LedTV(TV):
+    def __init__(self, brand, screen_thickness, energy_usage, lifespan, refresh_rate):
+        super().__init__(brand)
+        self.screen_thickness = screen_thickness
+        self.energy_usage = energy_usage
+        self.lifespan = lifespan
+        self.refresh_rate = refresh_rate
+        self.viewing_angle = 0  # Set the default viewing angle, update as needed
+        self.backlight = ""  # Set the default backlight, update as needed
+        self.display_details = ""  # Set the default display details, update as needed
+
+
+class PlasmaTV(TV):
+    def __init__(self, brand, screen_thickness, energy_usage, lifespan, refresh_rate):
+        super().__init__(brand)
+        self.screen_thickness = screen_thickness
+        self.energy_usage = energy_usage
+        self.lifespan = lifespan
+        self.refresh_rate = refresh_rate
+        self.viewing_angle = 0  # Set the default viewing angle, update as needed
+        self.backlight = ""  # Set the default backlight, update as needed
+        self.display_details = ""  # Set the default display details, update as needed
