@@ -1,0 +1,30 @@
+import math
+
+class Circle:
+    def __init__(self, data):
+        if len(data) >= 2:
+            self.radius = data[0]
+            self.x = data[1]
+            self.y = data[2]
+            self.area = self.calculate_area()
+            self.circumference = self.calculate_circumference()
+        else:
+            raise ValueError("Input list must have at least 3 elements")
+
+    def calculate_area(self):
+        return math.pi * self.radius ** 2
+
+    def calculate_circumference(self):
+        return 2 * math.pi * self.radius
+
+    def display_info(self):
+        print(f"Circle Information:")
+        print(f"Radius: {self.radius}")
+        print(f"Center: ({self.x}, {self.y})")
+        print(f"Area: {self.area}")
+        print(f"Circumference: {self.circumference}")
+
+# Example usage:
+data_list = [10, 501, 22, 37, 100, 999, 87, 351]
+circle1 = Circle(data_list[:3])  # Create a circle using the first three values
+circle1.display_info()
